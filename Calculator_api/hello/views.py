@@ -15,4 +15,8 @@ def index(request):
         else:
             result = 'Error:Not found TIME!'
         
-        return HttpResponse(result)
+        params = {
+            'time':time,
+            'result':result,
+        }
+        return render(request, 'hello/index.html', params)
