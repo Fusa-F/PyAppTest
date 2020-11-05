@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../hello/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>あいさつくん</h1>
-    <ul>
-        <li><h2>「{{result}}」</h2></li>
-        <li>時間：{{time}}時</li>
-    </ul>
+    <section id="main-content">
+        <h1 id="main-content_head">あいさつくん</h1>
+        <ul id="main-content_list">
+            <li><h2>「{{result}}」</h2></li>
+            <li>時間：<span class="strong">{{time}}時</span></li>
+        </ul>
+    </section>
 </body>
 </html>
