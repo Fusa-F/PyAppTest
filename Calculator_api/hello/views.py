@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json
 
 # Create your views here.
 def index(request):
@@ -15,4 +16,14 @@ def index(request):
         else:
             result = 'Error:Not found TIME!'
         
-        return HttpResponse(result)
+        params = {
+            'time':time,
+            'result':result,
+        }
+        
+        # json形式に変換
+        json_str = json.dumps(params, ensure_ascii=False, indent=2)
+        return HttpResponse(json_str)
+        #
+
+        return render(request, 'hello/index.html', params)
