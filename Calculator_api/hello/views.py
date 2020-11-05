@@ -21,9 +21,9 @@ def index(request):
             'result':result,
         }
         
-        # json形式に変換
-        json_str = json.dumps(params, ensure_ascii=False, indent=2)
-        return HttpResponse(json_str)
-        #
+        # # json形式に変換
+        # json_str = json.dumps(params, ensure_ascii=False, indent=2)
+        # return HttpResponse(json_str)
+        # #
 
         return render(request, 'hello/index.html', params)
