@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import View
 import json
+from . import forms
 
 # Create your views here.
 def index(request):
@@ -27,3 +29,17 @@ def index(request):
         # #
 
         return render(request, 'hello/index.html', params)
+
+# 要調査
+# class ChoiceView(View):
+#     def get(self, requset):
+#         form = forms.ChoiceForm()
+#         form.fields['choice1'].choices = [
+#             ('1', '1banme'),
+#         ]
+#         context = {
+#             'form': form
+#         }
+#         return render(request, 'hello/index.html', context)
+
+# choice_view = ChoiceView.as_view()
