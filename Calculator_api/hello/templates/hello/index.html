@@ -16,6 +16,12 @@
             <li><h2>「{{result}}」</h2></li>
             <li>時間：<span class="strong">{{time}}時</span></li>
         </ul>
+        <form action="/hello" method="POST">
+            {% for field in form %}
+            {{ field }}
+            {% endfor %}
+            {% csrf_token %}
+        </form>
     </section>
 </body>
 </html>
